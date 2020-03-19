@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {useMemo} from 'react';
+import {useMemo, MouseEvent} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {createSelector} from 'reselect';
 import {State} from '../../../store';
@@ -26,18 +26,18 @@ export const SideBar = () => {
 	const sortedLetters = useMemo(() => sortByDateModified(letters), [letters]);
 	const dispatch = useDispatch();
 
-	const handleSelectCurrent = (e: React.MouseEvent<HTMLDivElement>, id: string) => {
+	const handleSelectCurrent = (e: MouseEvent<HTMLDivElement>, id: string) => {
 		e.preventDefault();
 		dispatch(selectCurrent(id));
 	};
 
-	const handleDeleteLetter = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>, id: string) => {
+	const handleDeleteLetter = (e: MouseEvent<HTMLButtonElement>, id: string) => {
 		e.preventDefault();
 		e.stopPropagation();
 		dispatch(deleteLetter(id));
 	};
 
-	const handleFavorite = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>, id: string) => {
+	const handleFavorite = (e: MouseEvent<HTMLButtonElement>, id: string) => {
 		e.preventDefault();
 		e.stopPropagation();
 		dispatch(makeFavorite(id));
@@ -59,7 +59,7 @@ export const SideBar = () => {
 							</span>
 							<LetterButton
 								styles='side-bar-letter-header-button'
-								handleClick={(e) => handleDeleteLetter(e, letter.id)}
+								handleClick={(e: MouseEvent<HTMLButtonElement>) => handleDeleteLetter(e, letter.id)}
 							>
 								<span>&#x2716;</span>
 							</LetterButton>
@@ -67,17 +67,17 @@ export const SideBar = () => {
 						<div className='side-bar-letter-info'>
 							<LetterButton
 								styles='side-bar-letter-info-button'
-								handleClick={(e) => handleFavorite(e, letter.id)}
+								handleClick={(e: MouseEvent<HTMLButtonElement>) => handleFavorite(e, letter.id)}
 							>
-								<span>
-									{index + 1} {letter.isFavorite ? (
-									<span>&#x2605;</span>
+								{letter.isFavorite ? (
+										<span>{index + 1}&#x2605;</span>
 									) : (
-										<span>&#9734;</span>
+										<span>{index + 1}&#9734;</span>
 									)}
-								</span>
 							</LetterButton>
-							<span>Modified {calculateDateDifference(letter.dateModified)} ago</span>
+							<span className='side-bar-letter-info-date'>
+								Modified {calculateDateDifference(letter.dateModified)} ago
+							</span>
 						</div>
 					</div>
 				))

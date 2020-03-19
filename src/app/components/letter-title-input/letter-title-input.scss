@@ -6,11 +6,11 @@
   background-color: $main-color;
   text-overflow: ellipsis;
   white-space: nowrap;
-  font-size: 22px;
+  font-size: 3vmin;
   box-sizing: border-box;
-  padding: 10px 10px 5px 10px;
+  padding: 10px;
   width: 97vw;
-  max-height: 36px;
+  height: 7vh;
   color: $font-color;
   border: none;
   border-bottom: solid 1px lighten($font-color, 40%);

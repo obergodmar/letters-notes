@@ -3,14 +3,15 @@
 .side-bar {
   color: $font-color;
   background-color: $secondary-color;
-  width: 12vw;
+  width: 18vmax;
   height: 100%;
   overflow: hidden;
 
   &--empty {
+    font-size: 2vmin;
     user-select: none;
     text-align: center;
-    margin-top: 10px;
+    margin: 10px;
     color: lighten($font-color, 20%);
   }
 
@@ -20,8 +21,7 @@
     justify-content: center;
     cursor: pointer;
     color: $font-color;
-    font: inherit;
-    height: 46px;
+    height: 8vmin;
     padding: 0 5px;
     border: none;
     border-bottom: solid 1px lighten($font-color, 40%);
@@ -29,12 +29,13 @@
     &-header {
       display: flex;
       flex-direction: row;
+      align-items: center;
       justify-content: space-between;
+      height: 5vmin;
 
       &-title {
-        font-size: 14px;
-        line-height: 16px;
-        height: 20px;
+        font-size: 2.3vmin;
+        line-height: 2.3vmin;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -43,19 +44,26 @@
       &-button {
         background-color: darken($main-color, 5%);
         display: none;
+        font-size: 2vmin;
       }
     }
 
     &-info {
       user-select: none;
       color: lighten($font-color, 20%);
-      font-size: 10px;
+      font-size: 2vmin;
+      line-height: 2vmin;
+      height: 3vmin;
       display: flex;
       flex-direction: row;
+      align-items: center;
       justify-content: space-between;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
+
+      &-date {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
     }
 
     &:hover {

@@ -1,9 +1,10 @@
 import * as React from 'react';
+import {MouseEvent} from 'react';
 import './letter-button.scss';
 
 interface Props {
 	children: JSX.Element;
-	handleClick: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+	handleClick: (e: MouseEvent<HTMLButtonElement>) => void;
 	isDisabled?: boolean;
 	styles?: string;
 }
