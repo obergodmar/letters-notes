@@ -1,0 +1,43 @@
+@import 'src/app/styles/variables';
+
+.letter-title-input {
+  font: inherit;
+  overflow: hidden;
+  background-color: $main-color;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 22px;
+  box-sizing: border-box;
+  padding: 10px 10px 5px 10px;
+  width: 97vw;
+  max-height: 36px;
+  color: $font-color;
+  border: none;
+  border-bottom: solid 1px lighten($font-color, 40%);
+
+  &:focus {
+    outline: none;
+    border-bottom: solid 1px $font-color;
+
+    &:empty:before {
+      color: $font-color;
+    }
+  }
+
+  &:hover {
+    &:empty:before {
+      color: $font-color;
+    }
+  }
+
+  &:empty:before {
+    content: attr(placeholder);
+    display: block;
+    color: lighten($font-color, 20%);
+  }
+
+  &--warning {
+    background-color: $warning-color;
+    color: darken($warning-color, 20%);
+  }
+}

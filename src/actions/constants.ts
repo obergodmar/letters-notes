@@ -1,0 +1,6 @@
+export const FILL_LETTER_TITLE = 'FILL_LETTER_TITLE';
+export const FILL_LETTER_BODY = 'FILL_LETTER_BODY';
+export const NEW_LETTER = 'NEW_LETTER';
+export const SELECT_CURRENT = 'SELECT_CURRENT';
+export const DELETE_LETTER = 'DELETE_LETTER';
+export const MAKE_FAVORITE = 'MAKE_FAVORITE';
