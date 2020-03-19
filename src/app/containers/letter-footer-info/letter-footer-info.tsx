@@ -1,5 +1,4 @@
 import * as React from 'react';
-import {useMemo} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {createSelector} from 'reselect';
 import {
@@ -46,8 +45,7 @@ export const LetterFooterInfo = () => {
 		dispatch(selectCurrent(id));
 	};
 
-	const memoizedInfoSelector = useMemo(() => infoSelector, []);
-	const {length, wordCount, whiteSpace, timeDifference} = useSelector(memoizedInfoSelector);
+	const {length, wordCount, whiteSpace, timeDifference} = useSelector(infoSelector);
 
 	return (
 		<div className='letter-footer-info'>

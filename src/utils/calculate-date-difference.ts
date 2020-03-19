@@ -2,6 +2,11 @@ export const calculateDateDifference = (dateModifiedString: string): string => {
 	const dateModified = new Date(dateModifiedString).getTime();
 	const dateNow = new Date().getTime();
 	const difference = (dateNow - dateModified) / 1000;
+
+	if (isNaN(difference)) {
+		return '0 s';
+	}
+
 	if (difference < 60) {
 		const seconds = difference.toFixed(0);
 		return `${seconds} s`;
