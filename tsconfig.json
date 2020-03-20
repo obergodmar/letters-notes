@@ -29,5 +29,9 @@
 		"noFallthroughCasesInSwitch": true,
 		"forceConsistentCasingInFileNames": true,
 		"importHelpers": true
-	}
+	},
+	"exclude": [
+		"webpack.config.js",
+		"node_modules"
+	]
 }
