@@ -1,11 +1,12 @@
 # Letters Notes
+## See the demo [here](https://obergodmar.github.io/letters-notes/)
 
 ### Table of contents
-* [Description](#description)
-* [Screenshots](#screenshots)
-* [Rules](#rules)
-* [Todo](#todo)
-* [Changelog](#changelog)
+  - [Description](#description)
+  - [Screenshots](#screenshots)
+  - [Rules](#rules)
+  - [Todo](#todo)
+  - [Changelog](#changelog)
 
 
 ### Description
@@ -19,7 +20,7 @@ The suicide note by Michael Kahnwald to his son, Jonas Kahnwald.
 
 ### Rules
 
-You can't keep more than 9 letters in the same time.
+You can't keep more than 9 letters at the same time.
 
 ### Todo
 - [ ] Add storage system after restart
