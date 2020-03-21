@@ -1,6 +1,6 @@
 {
   "name": "letters-notes",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "author": {
@@ -21,6 +21,7 @@
     "@babel/preset-env": "^7.8.4",
     "@babel/preset-react": "^7.8.3",
     "@babel/preset-typescript": "^7.8.3",
+    "@types/node-uuid": "0.0.28",
     "@types/react": "^16.9.23",
     "@types/react-dom": "^16.9.5",
     "babel-loader": "^8.0.6",
@@ -44,6 +45,7 @@
     "@types/react-redux": "^7.1.7",
     "@types/redux": "^3.6.0",
     "@types/reselect": "^2.2.0",
+    "node-uuid": "^1.4.8",
     "react-contenteditable": "^3.3.3",
     "react-redux": "^7.2.0",
     "redux": "^4.0.5",

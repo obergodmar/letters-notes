@@ -5,9 +5,9 @@ import {
 	letterBodyWordsCount,
 	letterBodyLength,
 	letterBodyWhiteSpaceCount,
-	calculateDateDifference,
-	createUniqueId
+	calculateDateDifference
 } from '../../../utils';
+import {v4} from 'node-uuid';
 import {
 	currentLetterSelector,
 	lettersLength,
@@ -40,7 +40,7 @@ export const LetterFooterInfo = () => {
 	const dispatch = useDispatch();
 
 	const handleClick = () => {
-		const id = createUniqueId();
+		const id = v4();
 		dispatch(newLetter(id));
 		dispatch(selectCurrent(id));
 	};

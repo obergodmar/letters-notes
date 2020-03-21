@@ -6,9 +6,9 @@ import {
 	NEW_LETTER, MAKE_FAVORITE
 } from '../actions';
 import {LetterState} from '../store';
-import {createUniqueId} from '../utils';
+import {v4} from 'node-uuid';
 
-export const currentLetter = createUniqueId();
+export const currentLetter = v4();
 
 const initialState: LetterState = [
 	{

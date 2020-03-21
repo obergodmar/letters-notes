@@ -4,3 +4,8 @@ export {
 	Current,
 	State
 } from './types';
+
+export {
+	loadState,
+	saveState
+} from './local-storage';
