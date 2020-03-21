@@ -1,0 +1,15 @@
+{
+  "main": {
+    "js": "main.bundle.js"
+  },
+  "vendors": {
+    "js": "1.main.bundle.js"
+  },
+  "": {
+    "br": [
+      "1.main.bundle.js.br",
+      "main.bundle.js.br"
+    ],
+    "html": "index.html"
+  }
+}
