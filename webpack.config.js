@@ -1,10 +1,24 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const BrotliPlugin = require('brotli-webpack-plugin');
+const AssetsPlugin = require('assets-webpack-plugin');
+
 module.exports = {
     entry: './src',
     output: {
         path: path.join(__dirname, './dist/'),
-        filename: 'main.js'
+        filename: 'main.bundle.js'
+    },
+    optimization: {
+        splitChunks: {
+            cacheGroups: {
+                commons: {
+                    test: /[\\/]node_modules[\\/]/,
+                    name: 'vendors',
+                    chunks: 'all'
+                }
+            }
+        }
     },
     resolve: {
         extensions: ['.ts', '.tsx', '.js']
@@ -35,6 +49,17 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
         template: './src/index.html'
+        }),
+        new AssetsPlugin({
+            prettyPrint: true,
+            filename: 'assets.json',
+            path: path.resolve(__dirname, 'dist')
+        }),
+        new BrotliPlugin({
+            asset: '[path].br[query]',
+            test: /\.(js|css|html|svg)$/,
+            threshold: 10240,
+            minRatio: 0.8
         })
     ]
 };
