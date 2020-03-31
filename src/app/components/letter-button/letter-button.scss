@@ -4,9 +4,8 @@
   font: inherit;
   color: inherit;
   padding: 0.25vmax 0.5vmax;
-  background-color: var(--color-secondary, #fff3e3);
+  background-color: inherit;
   border-radius: var(--circled, 1.5vmax);
-  transition: background-color 0.5s ease-in-out;
 
   &:focus {
     outline: none;

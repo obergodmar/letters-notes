@@ -21,14 +21,11 @@
 
   &-button {
     width: 18vmax;
-    background-color: var(--color-secondary, #fff3e3);
+    background-color: inherit;
     font-size: 3vmin;
     text-align: center;
-    transition: background-color 0.5s ease-in-out;
 
     &--new-letter {
-      transition: background-color 0.5s ease-in-out;
-
       &:hover {
         background-color: var(--button-color, rgba(128, 128, 128, 0.2));
         color: var(--font-hover-color, #808080);

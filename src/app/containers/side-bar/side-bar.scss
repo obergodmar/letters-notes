@@ -24,6 +24,7 @@
     padding: 0 1vw;
     border: none;
     border-bottom: solid 0.15vmax var(--border-color, #e6e6e6);
+    transition: background-color 0.5s ease-out, border 0.5s ease-out;
 
     &-header {
       display: flex;
@@ -41,7 +42,6 @@
       }
 
       &-button {
-        background-color: var(--color-hover, #fcedd8);
         color: var(--font-hover-color, #808080);
         display: none;
         font-size: 2vmin;
@@ -81,9 +81,6 @@
           color: var(--font-hover-color, #808080);
 
           &-button {
-            background-color: var(--color-hover, #fcedd8);
-            color: var(--font-hover-color, #808080);
-
             &:hover {
               background-color: var(--side-buttons-color, rgba(128, 128, 128, 0.2));
               color: var(--font-hover-color, #808080);
