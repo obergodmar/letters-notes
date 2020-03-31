@@ -7,7 +7,7 @@
   --color-hover: #fcedd8;
   --font-color:  #808080;
   --font-hover-color: #808080;
-  --side-buttons-color: rgba(128, 128, 128, 0.2);
+  --side-buttons-color: var(--button-color);
   --button-color: rgba(128, 128, 128, 0.2);
   --border-color: #e6e6e6;
   --info-color: #b3b3b3;
@@ -24,7 +24,7 @@
   --color-hover: #b7c6c8;
   --font-color:  #0e141e;
   --font-hover-color: #0e141e;
-  --side-buttons-color: rgba(128, 128, 128, 0.2);
+  --side-buttons-color: var(--button-color);
   --button-color: rgba(128, 128, 128, 0.2);
   --border-color: #b7c9cc;
   --info-color: #576871;

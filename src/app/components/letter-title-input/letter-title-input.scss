@@ -1,7 +1,7 @@
 .letter-title-input {
   font: inherit;
   overflow: hidden;
-  background-color: var(--color-main);
+  background-color: var(--color-main, #fef8f0);
   text-overflow: ellipsis;
   white-space: nowrap;
   font-size: 3vmin;
@@ -9,34 +9,34 @@
   box-sizing: border-box;
   padding: 0 2vw;
   width: 82vw;
-  color: var(--font-color);
+  color: var(--font-color, #808080);
   border: none;
   transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
 
   &:focus {
     outline: none;
-    background-color: var(--input-color);
-    color: var(--font-color-input);
+    background-color: var(--input-color, #fef8f0);
+    color: var(--font-color-input, #808080);
 
     &:empty:before {
-      color: var(--font-color);
+      color: var(--font-color, #808080);
     }
   }
 
   &:hover {
     &:empty:before {
-      color: var(--font-color);
+      color: var(--font-color, #808080);
     }
   }
 
   &:empty:before {
     content: attr(placeholder);
     display: block;
-    color: var(--info-color);
+    color: var(--info-color, #b3b3b3);
     transition: color 0.5s ease-in-out;
   }
 
   &--warning {
-    color: var(--font-color-warning);
+    color: var(--font-color-warning, #ff8a8a);
   }
 }

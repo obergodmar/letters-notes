@@ -1,6 +1,6 @@
 .side-bar {
-  color: var(--font-color);
-  background-color: var(--color-secondary);
+  color: var(--font-color, #808080);
+  background-color: var(--color-secondary, #fff3e3);
   width: 18vmax;
   height: 100%;
   overflow: hidden;
@@ -11,7 +11,7 @@
     user-select: none;
     text-align: center;
     margin: 2.5vmax;
-    color: var(--info-color);
+    color: var(--info-color, #b3b3b3);
   }
 
   &-letter {
@@ -19,11 +19,11 @@
     flex-direction: column;
     justify-content: center;
     cursor: pointer;
-    color: var(--font-color);
+    color: var(--font-color, #808080);
     height: 8vmin;
     padding: 0 1vw;
     border: none;
-    border-bottom: solid 0.15vmax var(--border-color);
+    border-bottom: solid 0.15vmax var(--border-color, #e6e6e6);
 
     &-header {
       display: flex;
@@ -41,8 +41,8 @@
       }
 
       &-button {
-        background-color: var(--color-hover);
-        color: var(--font-hover-color);
+        background-color: var(--color-hover, #fcedd8);
+        color: var(--font-hover-color, #808080);
         display: none;
         font-size: 2vmin;
       }
@@ -50,7 +50,7 @@
 
     &-info {
       user-select: none;
-      color: var(--info-color);
+      color: var(--info-color, #b3b3b3);
       font-size: 1.6vmin;
       line-height: 2vmin;
       height: 3vmin;
@@ -67,26 +67,26 @@
     }
 
     &:hover {
-      background-color: var(--color-hover);
-      color: var(--font-hover-color);
+      background-color: var(--color-hover, #fcedd8);
+      color: var(--font-hover-color, #808080);
 
       .side-bar-letter {
-        color: var(--font-hover-color);
+        color: var(--font-hover-color, #808080);
 
         &-header-button {
           display: block;
         }
 
         &-info {
-          color: var(--font-hover-color);
+          color: var(--font-hover-color, #808080);
 
           &-button {
-            background-color: var(--color-hover);
-            color: var(--font-hover-color);
+            background-color: var(--color-hover, #fcedd8);
+            color: var(--font-hover-color, #808080);
 
             &:hover {
-              background-color: var(--side-buttons-color);
-              color: var(--font-hover-color);
+              background-color: var(--side-buttons-color, rgba(128, 128, 128, 0.2));
+              color: var(--font-hover-color, #808080);
             }
           }
         }

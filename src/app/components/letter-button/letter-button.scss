@@ -4,8 +4,8 @@
   font: inherit;
   color: inherit;
   padding: 0.25vmax 0.5vmax;
-  background-color: var(--color-secondary);
-  border-radius: var(--circled);
+  background-color: var(--color-secondary, #fff3e3);
+  border-radius: var(--circled, 1.5vmax);
   transition: background-color 0.5s ease-in-out;
 
   &:focus {
@@ -15,16 +15,16 @@
   &:hover,
   &:active,
   &:focus {
-    color: var(--font-hover-color);
-    background-color: var(--side-buttons-color);
+    color: var(--font-hover-color, #808080);
+    background-color: var(--side-buttons-color, rgba(128, 128, 128, 0.2));
   }
 
   &--disabled {
-    color: var(--disabled-color);
+    color: var(--disabled-color, #cccccc);
     cursor: default;
 
     &:hover {
-      color: var(--disabled-color) !important;
+      color: var(--disabled-color, #cccccc) !important;
       background-color: inherit !important;
     }
   }

@@ -9,8 +9,8 @@
 
   &-element {
     display: block;
-    border: 1px solid var(--border-color);
-    border-radius: var(--circled);
+    border: 1px solid var(--border-color, #e6e6e6);
+    border-radius: var(--circled, 1.5vmax);
     margin: 1vmin;
     height: 3vmin;
     width: 3vmin;

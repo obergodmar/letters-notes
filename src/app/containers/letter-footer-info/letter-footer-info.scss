@@ -4,12 +4,12 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--color-secondary);
+  background-color: var(--color-secondary, #fff3e3);
   font: inherit;
   height: 5vh;
   font-size: 2vmin;
   line-height: 3vmin;
-  color: var(--info-color);
+  color: var(--info-color, #b3b3b3);
   transition: background-color 0.5s ease-in-out, сolor 0.5s ease-in-out;
 
   &-element, &-button {
@@ -21,7 +21,7 @@
 
   &-button {
     width: 18vmax;
-    background-color: var(--color-secondary);
+    background-color: var(--color-secondary, #fff3e3);
     font-size: 3vmin;
     text-align: center;
     transition: background-color 0.5s ease-in-out;
@@ -30,8 +30,8 @@
       transition: background-color 0.5s ease-in-out;
 
       &:hover {
-        background-color: var(--button-color);
-        color: var(--font-hover-color);
+        background-color: var(--button-color, rgba(128, 128, 128, 0.2));
+        color: var(--font-hover-color, #808080);
       }
     }
   }

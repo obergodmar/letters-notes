@@ -5,13 +5,13 @@
   justify-content: space-between;
   width: 97vw;
   height: 7vh;
-  background-color: var(--color-main);
-  border-bottom: solid 0.15vmax var(--border-color);
+  background-color: var(--color-main, #fef8f0);
+  border-bottom: solid 0.15vmax var(--border-color, #e6e6e6);
   transition: background-color 0.5s ease-in-out, border 0.5s ease-in-out;
 
   &:focus-within {
     outline: none;
-    background-color: var(--input-color);
-    border-bottom: solid 0.15vmax var(--font-color);
+    background-color: var(--input-color, #fef8f0);
+    border-bottom: solid 0.15vmax var(--border-color, #e6e6e6);
   }
 }

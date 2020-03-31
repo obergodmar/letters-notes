@@ -1,13 +1,13 @@
 .main-container {
-  color: var(--font-color);
-  background-color: var(--color-main);
+  color: var(--font-color, #808080);
+  background-color: var(--color-main, #fef8f0);
   display: flex;
   flex-direction: column;
   justify-content: start;
   width: 97vw;
   height: 97vh;
   overflow: hidden;
-  border-radius: var(--circled);
+  border-radius: var(--circled, 1.5vmax);
   box-shadow: 0 0.25vmax 1vmax rgba(0,0,0,0.07),
               0 1vmax 2vmax rgba(0,0,0,0.07),
               0 2vmax 4vmax rgba(0,0,0,0.07),

@@ -4,38 +4,38 @@
   height: 87vh;
   width: 82vmax;
   resize: none;
-  background-color: var(--color-main);
+  background-color: var(--color-main, #fef8f0);
   border: none;
   font-size: 3vmin;
-  color: var(--font-color);
+  color: var(--font-color, #808080);
   line-height: 3vmin;
   overflow: auto;
   padding: 2vh 4vw;
-  border-left: solid 0.15vmax var(--border-color);
-  border-bottom: solid 0.15vmax var(--border-color);
+  border-left: solid 0.15vmax var(--border-color, #e6e6e6);
+  border-bottom: solid 0.15vmax var(--border-color, #e6e6e6);
   transition: background-color 0.5s ease-in-out, сolor 0.5s ease-in-out, border 0.5s ease-in-out;
 
   &:focus {
     outline: none;
-    background-color: var(--input-color);
-    color: var(--font-color-input);
+    background-color: var(--input-color, #fef8f0);
+    color: var(--font-color-input, #808080);
     border-left: solid 0.15vmax var(--font-color);
 
     &:empty:before {
-      color: var(--font-color);
+      color: var(--font-color, #808080);
     }
   }
 
   &:hover {
     &:empty:before {
-      color: var(--font-color);
+      color: var(--font-color, #808080);
     }
   }
 
   &:empty:before {
     content: attr(placeholder);
     display: block;
-    color: var(--info-color);
+    color: var(--info-color, #b3b3b3);
     transition: color 0.5s ease-in-out;
   }
 }
