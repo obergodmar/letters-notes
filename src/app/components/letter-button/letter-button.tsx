@@ -16,7 +16,7 @@ export const LetterButton = ({
 		styles
 }: Props) => (
 	<button
-		className={`letter-button ${isDisabled && 'letter-button--disabled'} ${styles}`}
+		className={`letter-button ${styles} ${isDisabled && 'letter-button--disabled'}`}
 		onClick={handleClick}
 		disabled={isDisabled}
 	>

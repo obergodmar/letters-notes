@@ -6,7 +6,7 @@ import ContentEditable, {ContentEditableEvent} from 'react-contenteditable';
 import {createSelector} from 'reselect';
 import {fillLetterBody} from '../../../actions';
 import {
-	currentLetterSelector,
+	currentIdSelector,
 	lettersSelector
 } from '../../../selectors';
 import './letter-body-input.scss';
@@ -15,7 +15,7 @@ export const LetterBodyInput = forwardRef((
 	_,
 	bodyInputRef: Ref<HTMLInputElement>
 ) => {
-	const current = useSelector(currentLetterSelector);
+	const current = useSelector(currentIdSelector);
 	const currentLetter = createSelector(
 		lettersSelector,
 		(letters) =>

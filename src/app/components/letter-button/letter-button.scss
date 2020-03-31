@@ -1,12 +1,12 @@
-@import 'src/app/styles/variables';
-
 .letter-button {
   cursor: pointer;
   border: none;
   font: inherit;
   color: inherit;
-  background-color: $secondary-color;
-  border-radius: 6px;
+  padding: 0.25vmax 0.5vmax;
+  background-color: var(--color-secondary);
+  border-radius: var(--circled);
+  transition: background-color 0.5s ease-in-out;
 
   &:focus {
     outline: none;
@@ -15,16 +15,16 @@
   &:hover,
   &:active,
   &:focus {
-    color: $font-color;
-    background-color: fade-out($font-color, 0.8) !important;
+    color: var(--font-hover-color);
+    background-color: var(--side-buttons-color);
   }
 
   &--disabled {
-    color: lighten($font-color, 30%);
+    color: var(--disabled-color);
     cursor: default;
 
     &:hover {
-      color: lighten($font-color, 30%);
+      color: var(--disabled-color) !important;
       background-color: inherit !important;
     }
   }

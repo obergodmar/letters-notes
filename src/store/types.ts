@@ -3,6 +3,7 @@ export interface Letter {
 	body: string;
 	id: string;
 	isFavorite: boolean;
+	theme: string;
 	dateCreated: string;
 	dateModified: string;
 }

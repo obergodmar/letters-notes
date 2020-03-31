@@ -1,43 +1,42 @@
-@import 'src/app/styles/variables';
-
 .letter-title-input {
   font: inherit;
   overflow: hidden;
-  background-color: $main-color;
+  background-color: var(--color-main);
   text-overflow: ellipsis;
   white-space: nowrap;
   font-size: 3vmin;
+  height: 3.4vmin;
   box-sizing: border-box;
-  padding: 10px;
-  width: 97vw;
-  height: 7vh;
-  color: $font-color;
+  padding: 0 2vw;
+  width: 82vw;
+  color: var(--font-color);
   border: none;
-  border-bottom: solid 1px lighten($font-color, 40%);
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
 
   &:focus {
     outline: none;
-    border-bottom: solid 1px $font-color;
+    background-color: var(--input-color);
+    color: var(--font-color-input);
 
     &:empty:before {
-      color: $font-color;
+      color: var(--font-color);
     }
   }
 
   &:hover {
     &:empty:before {
-      color: $font-color;
+      color: var(--font-color);
     }
   }
 
   &:empty:before {
     content: attr(placeholder);
     display: block;
-    color: lighten($font-color, 20%);
+    color: var(--info-color);
+    transition: color 0.5s ease-in-out;
   }
 
   &--warning {
-    background-color: $warning-color;
-    color: darken($warning-color, 20%);
+    color: var(--font-color-warning);
   }
 }

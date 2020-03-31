@@ -5,7 +5,7 @@ import ContentEditable, {ContentEditableEvent} from 'react-contenteditable';
 import {createSelector} from 'reselect';
 import {titleLengthLimiter} from '../../../utils';
 import {fillLetterTitle} from '../../../actions';
-import {currentLetterSelector, lettersSelector} from '../../../selectors';
+import {currentIdSelector, lettersSelector} from '../../../selectors';
 import './letter-title-input.scss';
 
 interface Props {
@@ -13,7 +13,7 @@ interface Props {
 }
 
 export const LetterTitleInput = ({bodyInputRef}: Props) => {
-	const current = useSelector(currentLetterSelector);
+	const current = useSelector(currentIdSelector);
 	const currentLetter = createSelector(
 		lettersSelector,
 		(letters) =>

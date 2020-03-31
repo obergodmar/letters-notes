@@ -4,7 +4,8 @@ export {
 	NEW_LETTER,
 	SELECT_CURRENT,
 	DELETE_LETTER,
-	MAKE_FAVORITE
+	MAKE_FAVORITE,
+	CHANGE_THEME
 } from './constants';
 
 export {
@@ -13,10 +14,12 @@ export {
 	newLetter,
 	selectCurrent,
 	deleteLetter,
-	makeFavorite
+	makeFavorite,
+	changeTheme
 } from './dictionary';
 
 export {
 	LetterActionTypes,
-	ActionWithIdType
+	ActionWithIdType,
+	ChangeThemeType
 } from './types';

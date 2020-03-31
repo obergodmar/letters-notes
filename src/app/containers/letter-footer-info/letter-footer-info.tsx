@@ -9,7 +9,7 @@ import {
 } from '../../../utils';
 import {v4} from 'node-uuid';
 import {
-	currentLetterSelector,
+	currentIdSelector,
 	lettersLength,
 	lettersSelector
 } from '../../../selectors';
@@ -18,7 +18,7 @@ import {newLetter, selectCurrent} from '../../../actions';
 import './letter-footer-info.scss';
 
 export const LetterFooterInfo = () => {
-	const current = useSelector(currentLetterSelector);
+	const current = useSelector(currentIdSelector);
 	const lettersCount = useSelector(lettersLength);
 
 	const currentLetter = createSelector(
@@ -53,6 +53,7 @@ export const LetterFooterInfo = () => {
 				<LetterButton
 					handleClick={handleClick}
 					isDisabled={lettersCount === 10}
+					styles={'letter-footer-info-button--new-letter'}
 				>
 					<span>New Letter &#x2709;</span>
 				</LetterButton>

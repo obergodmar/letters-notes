@@ -3,7 +3,9 @@ import {
 	DELETE_LETTER,
 	FILL_LETTER_BODY,
 	FILL_LETTER_TITLE,
-	NEW_LETTER, MAKE_FAVORITE
+	NEW_LETTER,
+	MAKE_FAVORITE,
+	CHANGE_THEME
 } from '../actions';
 import {LetterState} from '../store';
 import {v4} from 'node-uuid';
@@ -15,6 +17,7 @@ const initialState: LetterState = [
 		id: currentLetter,
 		title: '',
 		body: '',
+		theme: 'default',
 		isFavorite: false,
 		dateCreated: Date(),
 		dateModified: Date()
@@ -27,12 +30,8 @@ export const letters = (state = initialState, action: LetterActionTypes) => {
 			return [
 				...state,
 				{
-					id: action.id,
-					title: '',
-					body: '',
-					isFavorite: false,
-					dateCreated: Date(),
-					dateModified: Date()
+					...initialState[0],
+					id: action.id
 				}
 			];
 		case FILL_LETTER_TITLE:
@@ -67,6 +66,17 @@ export const letters = (state = initialState, action: LetterActionTypes) => {
 					{
 						...letter,
 						isFavorite: !letter.isFavorite
+					}
+				) : (
+					letter
+				)
+			);
+		case CHANGE_THEME:
+			return [...state].map(letter =>
+			letter.id === action.id ? (
+					{
+						...letter,
+						theme : action.theme
 					}
 				) : (
 					letter

@@ -4,10 +4,16 @@ import {
 	NEW_LETTER,
 	SELECT_CURRENT,
 	DELETE_LETTER,
-	MAKE_FAVORITE
+	MAKE_FAVORITE,
+	CHANGE_THEME
 } from './constants';
 
-import {ActionWithIdType, FillTitleLetterType, FillBodyLetterType} from './types';
+import {
+	ActionWithIdType,
+	FillTitleLetterType,
+	FillBodyLetterType,
+	ChangeThemeType
+} from './types';
 
 export const fillLetterTitle = (title: string, id: string): FillTitleLetterType => ({
 	type: FILL_LETTER_TITLE,
@@ -39,4 +45,10 @@ export const deleteLetter = (id: string): ActionWithIdType => ({
 export const makeFavorite = (id: string): ActionWithIdType => ({
 	type: MAKE_FAVORITE,
 	id
+});
+
+export const changeTheme = (id: string, theme: string): ChangeThemeType => ({
+	type: CHANGE_THEME,
+	id,
+	theme
 });

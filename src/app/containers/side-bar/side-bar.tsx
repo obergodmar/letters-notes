@@ -70,9 +70,9 @@ export const SideBar = () => {
 								handleClick={(e: MouseEvent<HTMLButtonElement>) => handleFavorite(e, letter.id)}
 							>
 								{letter.isFavorite ? (
-										<span>{index + 1}&#x2605;</span>
+										<span>{index + 1} &#x2605;</span>
 									) : (
-										<span>{index + 1}&#9734;</span>
+										<span>{index + 1} &#9734;</span>
 									)}
 							</LetterButton>
 							<span className='side-bar-letter-info-date'>

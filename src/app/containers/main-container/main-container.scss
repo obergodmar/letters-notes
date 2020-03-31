@@ -1,22 +1,20 @@
-@import 'src/app/styles/variables';
-
 .main-container {
-  font-family: $main-font;
-  color: $font-color;
-  background-color: $main-color;
+  color: var(--font-color);
+  background-color: var(--color-main);
   display: flex;
   flex-direction: column;
   justify-content: start;
   width: 97vw;
   height: 97vh;
   overflow: hidden;
-  border-radius: 6px;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.07),
-              0 2px 4px rgba(0,0,0,0.07),
-              0 4px 8px rgba(0,0,0,0.07),
-              0 8px 16px rgba(0,0,0,0.07),
-              0 16px 32px rgba(0,0,0,0.07),
-              0 32px 64px rgba(0,0,0,0.07);
+  border-radius: var(--circled);
+  box-shadow: 0 0.25vmax 1vmax rgba(0,0,0,0.07),
+              0 1vmax 2vmax rgba(0,0,0,0.07),
+              0 2vmax 4vmax rgba(0,0,0,0.07),
+              0 4vmax 8vmax rgba(0,0,0,0.07),
+              0 8vmax 16vmax rgba(0,0,0,0.07),
+              0 16vmax 32vmax rgba(0,0,0,0.07);
+  transition: background-color 0.5s ease-in-out, сolor 0.5s ease-in-out, border-radius 0.5s ease-in-out;
 
   &-letter-body {
     width: 100%;

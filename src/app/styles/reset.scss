@@ -3,6 +3,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   padding: 0;
   border: 0;
   font: inherit;
+  font-family: 'Roboto', sans-serif;
   vertical-align: baseline;
 }
 
@@ -13,6 +14,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 body {
   background-color: #ffffff;
   line-height: 1;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 ol, ul {

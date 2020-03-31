@@ -1,18 +1,17 @@
-@import 'src/app/styles/variables';
-
 .side-bar {
-  color: $font-color;
-  background-color: $secondary-color;
+  color: var(--font-color);
+  background-color: var(--color-secondary);
   width: 18vmax;
   height: 100%;
   overflow: hidden;
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
 
   &--empty {
     font-size: 2vmin;
     user-select: none;
     text-align: center;
-    margin: 10px;
-    color: lighten($font-color, 20%);
+    margin: 2.5vmax;
+    color: var(--info-color);
   }
 
   &-letter {
@@ -20,11 +19,11 @@
     flex-direction: column;
     justify-content: center;
     cursor: pointer;
-    color: $font-color;
+    color: var(--font-color);
     height: 8vmin;
-    padding: 0 5px;
+    padding: 0 1vw;
     border: none;
-    border-bottom: solid 1px lighten($font-color, 40%);
+    border-bottom: solid 0.15vmax var(--border-color);
 
     &-header {
       display: flex;
@@ -42,7 +41,8 @@
       }
 
       &-button {
-        background-color: darken($main-color, 5%);
+        background-color: var(--color-hover);
+        color: var(--font-hover-color);
         display: none;
         font-size: 2vmin;
       }
@@ -50,8 +50,8 @@
 
     &-info {
       user-select: none;
-      color: lighten($font-color, 20%);
-      font-size: 2vmin;
+      color: var(--info-color);
+      font-size: 1.6vmin;
       line-height: 2vmin;
       height: 3vmin;
       display: flex;
@@ -67,15 +67,28 @@
     }
 
     &:hover {
-      background-color: darken($main-color, 5%);
+      background-color: var(--color-hover);
+      color: var(--font-hover-color);
 
       .side-bar-letter {
+        color: var(--font-hover-color);
+
         &-header-button {
           display: block;
         }
 
-        &-info-button {
-          background-color: darken($main-color, 5%);
+        &-info {
+          color: var(--font-hover-color);
+
+          &-button {
+            background-color: var(--color-hover);
+            color: var(--font-hover-color);
+
+            &:hover {
+              background-color: var(--side-buttons-color);
+              color: var(--font-hover-color);
+            }
+          }
         }
       }
     }

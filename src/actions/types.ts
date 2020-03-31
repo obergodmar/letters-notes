@@ -10,7 +10,13 @@ export interface FillBodyLetterType {
 	id: string;
 }
 
-export type LetterActionTypes =	FillTitleLetterType & FillBodyLetterType;
+export interface ChangeThemeType {
+	type: string;
+	id: string;
+	theme: string;
+}
+
+export type LetterActionTypes =	FillTitleLetterType & FillBodyLetterType & ChangeThemeType;
 
 export interface ActionWithIdType {
 	type: string;

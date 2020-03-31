@@ -4,3 +4,4 @@ export const NEW_LETTER = 'NEW_LETTER';
 export const SELECT_CURRENT = 'SELECT_CURRENT';
 export const DELETE_LETTER = 'DELETE_LETTER';
 export const MAKE_FAVORITE = 'MAKE_FAVORITE';
+export const CHANGE_THEME = 'CHANGE_THEME';

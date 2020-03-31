@@ -1,0 +1,67 @@
+.theme-default {
+  --color-main: #fef8f0;
+  --color-secondary: #fff3e3;
+  --input-color: var(--color-main);
+  --font-color-input: var(--font-color);
+  --font-color-warning: #ff8a8a;
+  --color-hover: #fcedd8;
+  --font-color:  #808080;
+  --font-hover-color: #808080;
+  --side-buttons-color: rgba(128, 128, 128, 0.2);
+  --button-color: rgba(128, 128, 128, 0.2);
+  --border-color: #e6e6e6;
+  --info-color: #b3b3b3;
+  --disabled-color: #cccccc;
+  --circled: 1.5vmax;
+}
+
+.theme-white {
+  --color-main: #ffffff;
+  --color-secondary: #f3f7f7;
+  --input-color: var(--color-main);
+  --font-color-input: var(--font-color);
+  --font-color-warning: #ff8a8a;
+  --color-hover: #b7c6c8;
+  --font-color:  #0e141e;
+  --font-hover-color: #0e141e;
+  --side-buttons-color: rgba(128, 128, 128, 0.2);
+  --button-color: rgba(128, 128, 128, 0.2);
+  --border-color: #b7c9cc;
+  --info-color: #576871;
+  --disabled-color: #b7c9cc;
+  --circled: 1vmax;
+}
+
+.theme-dark {
+  --color-main: #141414;
+  --color-secondary: #202121;
+  --input-color: var(--color-main);
+  --font-color-input: var(--font-color);
+  --font-color-warning: #ff8a8a;
+  --color-hover: #ffffff;
+  --font-color:  #ffffff;
+  --font-hover-color: var(--color-main);
+  --side-buttons-color: rgba(128, 128, 128, 0.2);
+  --button-color: #ffffff;
+  --border-color: var(--color-main);
+  --info-color: #808080;
+  --disabled-color: #393b3b;
+  --circled: none;
+}
+
+.theme-oceanic {
+  --color-main: #4b4b7e;
+  --color-secondary: #292961;
+  --input-color: #ffffff;
+  --font-color-input: #2e2e2e;
+  --font-color-warning: #ff8a8a;
+  --color-hover: #5c5c8c;
+  --font-color:  #d1d1f0;
+  --font-hover-color: #d1d1f0;
+  --side-buttons-color: #4b4b7e;
+  --button-color: #5c5c8c;
+  --border-color: #535385;
+  --info-color: #d1d1f0;
+  --disabled-color: #535385;
+  --circled: 0.25vmax;
+}

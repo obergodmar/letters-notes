@@ -27,7 +27,7 @@ You can't keep more than 9 letters at the same time.
 - [ ] Add rich text
 - [ ] Add custom scrollbar
 - [ ] Add export & import
-- [ ] Add ability to change theme
+- [x] Add ability to change theme
 - [ ] Add settings
 - [ ] Add page icon
 - [ ] Add animations
@@ -35,7 +35,11 @@ You can't keep more than 9 letters at the same time.
 
 ### Changelog
 
-### [1.0.1] - 2020-03-22
+#### [1.1.0] - 2020-03-31
+- Add ability to change theme.
+- Fix styling width & height dependencies.
+
+#### [1.0.1] - 2020-03-22
 - Add storage system after restart. Branch: `feature/local-storage`.
 - Add `v4()` from `node-uuid` for unique IDs. 
 
