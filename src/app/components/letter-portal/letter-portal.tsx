@@ -1,4 +1,4 @@
-import {FunctionComponent, ReactComponentElement} from 'react';
+import {FunctionComponent, ReactComponentElement, useEffect, useState} from 'react';
 import { createPortal } from 'react-dom';
 
 interface Props {
@@ -6,13 +6,22 @@ interface Props {
 }
 
 export const LetterPortal = ({ children }: Props) => {
-	let main = document.getElementById('main-container');
-	if (!main) {
-		main = document.createElement('div');
-		document.appendChild(main);
+	const [mountpoint, setMountpoint] = useState(document.body);
+
+	useEffect(() => {
+		const mount = document.getElementById('main-container');
+		if (!mount) {
+			setMountpoint(document.body);
+		} else {
+			setMountpoint(mount);
+		}
+	}, []);
+
+	if (!mountpoint) {
+		setMountpoint(document.body);
 	}
 
-	return createPortal(children, main);
+	return createPortal(children, mountpoint as Element);
 };
 
 LetterPortal.displayName = 'LetterPortal';

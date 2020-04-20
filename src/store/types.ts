@@ -11,7 +11,6 @@ export interface Letter {
 export interface Positioning {
 	left: number;
 	top: number;
-	width: number;
 }
 
 export type Current = string;
