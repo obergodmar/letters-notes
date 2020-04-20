@@ -5,7 +5,7 @@ const AssetsPlugin = require('assets-webpack-plugin');
 
 module.exports = () => {
     const prodPlugins = [];
-    if (process.env.NODE_ENV === 'Production') {
+    if (process.env.NODE_ENV === 'production') {
         prodPlugins.push(new AssetsPlugin({
             prettyPrint: true,
             filename: 'assets.json',
