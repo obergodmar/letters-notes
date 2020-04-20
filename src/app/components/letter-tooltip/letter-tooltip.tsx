@@ -1,8 +1,8 @@
 import * as React from 'react';
-import ReactDOM from 'react-dom';
 import {Positioning} from '../../../store';
 import './letter-tooltip.scss';
 import {useEffect, useState} from 'react';
+import {LetterPortal} from '..';
 
 interface Props {
 	tooltipText: string;
@@ -20,11 +20,6 @@ export const LetterTooltip = ({tooltipText, coordinates, margin}: Props) => {
 		};
 	}, []);
 
-	let root = document.getElementById('main-container');
-	if (!root) {
-		root = document.createElement('div');
-		document.appendChild(root);
-	}
 	let transform: {};
 	if (margin === 'top') {
 		transform = {transform: 'translateY(6vh)'};
@@ -35,7 +30,7 @@ export const LetterTooltip = ({tooltipText, coordinates, margin}: Props) => {
 	const styles = {...transform, ...coordinates};
 
 	return (
-		ReactDOM.createPortal(
+		<LetterPortal>
 			<div
 				style={{opacity: visible ? '1' : '0', ...styles}}
 				className='letter-tooltip'
@@ -43,9 +38,8 @@ export const LetterTooltip = ({tooltipText, coordinates, margin}: Props) => {
 				<span className='letter-tooltip-text'>
 					{tooltipText}
 				</span>
-			</div>,
-			root
-		)
+			</div>
+		</LetterPortal>
 	);
 };
 
