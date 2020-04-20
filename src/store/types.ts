@@ -8,6 +8,12 @@ export interface Letter {
 	dateModified: string;
 }
 
+export interface Positioning {
+	left: number;
+	top: number;
+	width: number;
+}
+
 export type Current = string;
 
 export type LetterState = Letter[];

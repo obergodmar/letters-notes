@@ -1,9 +1,12 @@
 import * as React from 'react';
-import {MouseEvent} from 'react';
+import {MouseEvent, useRef, useState} from 'react';
 import {createSelector} from 'reselect';
 import {useDispatch, useSelector} from 'react-redux';
 import {currentIdSelector, lettersSelector} from '../../../selectors';
+import {setTooltipCoordinates} from '../../../utils';
+import {LetterTooltip} from '..';
 import {changeTheme} from '../../../actions';
+
 import './theme-buttons.scss';
 
 const themes = [
@@ -26,7 +29,9 @@ const themes = [
 ];
 
 export const ThemeButtons = () => {
+	const themeButtonsRef = useRef<HTMLDivElement>(null);
 	const currentSelector = useSelector(currentIdSelector);
+	const [tooltipIsShown, setIsTooltipShown] = useState(false);
 
 	const dispatch = useDispatch();
 
@@ -57,7 +62,10 @@ export const ThemeButtons = () => {
 	}).reverse();
 
 	return (
-		<div className='theme-buttons'>
+		<div
+			className='theme-buttons'
+			ref={themeButtonsRef}
+		>
 			{themes.map(({name, color}) => (
 				<div
 					key={name}
@@ -70,8 +78,16 @@ export const ThemeButtons = () => {
 					}
 					className='theme-buttons-element'
 					onClick={e => handleChangeTheme(e, name)}
+					onMouseEnter={() => setIsTooltipShown(!(name === currentTheme))}
+					onMouseLeave={() => setIsTooltipShown(false)}
 				/>
 			))}
+			{tooltipIsShown  &&
+				<LetterTooltip
+					tooltipText='Change theme'
+					margin='top'
+					coordinates={setTooltipCoordinates(themeButtonsRef)}
+				/>}
 		</div>
 	);
 };

@@ -2,7 +2,8 @@ export {
 	Letter,
 	LetterState,
 	Current,
-	State
+	State,
+	Positioning
 } from './types';
 
 export {

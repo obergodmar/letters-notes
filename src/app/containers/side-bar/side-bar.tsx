@@ -60,6 +60,8 @@ export const SideBar = () => {
 							<LetterButton
 								styles='side-bar-letter-header-button'
 								handleClick={(e: MouseEvent<HTMLButtonElement>) => handleDeleteLetter(e, letter.id)}
+								tooltipText='Delete letter'
+								tooltipMargin='top'
 							>
 								<span>&#x2716;</span>
 							</LetterButton>
@@ -68,6 +70,8 @@ export const SideBar = () => {
 							<LetterButton
 								styles='side-bar-letter-info-button'
 								handleClick={(e: MouseEvent<HTMLButtonElement>) => handleFavorite(e, letter.id)}
+								tooltipText='Add to Favorites'
+								tooltipMargin='top'
 							>
 								{letter.isFavorite ? (
 										<span>{index + 1} &#x2605;</span>

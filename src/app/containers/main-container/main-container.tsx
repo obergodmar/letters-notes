@@ -26,7 +26,7 @@ export const MainContainer = () => {
 
 	const bodyInputRef = useRef<HTMLInputElement>(null);
 	return (
-		<div className={theme}>
+		<div className={theme} id='main-container'>
 			<LetterTitle bodyInputRef={bodyInputRef}/>
 			<div className='main-container-letter-body'>
 				<SideBar />

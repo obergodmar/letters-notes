@@ -1,0 +1,16 @@
+.letter-tooltip {
+  position: absolute;
+  height: 4.2vmin;
+  text-align: center;
+  transition: opacity 0.2s;
+
+  &-text {
+    box-sizing: border-box;
+    padding: 1vh;
+    border: 1px solid var(--border-color, #e6e6e6);
+    border-radius: var(--circled, 1.5vmax);
+    background-color: var(--color-hover, #fcedd8);
+    color: var(--font-hover-color, #808080);
+    font-size: 2vmin;
+  }
+}

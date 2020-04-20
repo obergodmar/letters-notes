@@ -52,6 +52,8 @@ export const LetterFooterInfo = () => {
 			<div className='letter-footer-info-button'>
 				<LetterButton
 					handleClick={handleClick}
+					tooltipText='Create new letter'
+					tooltipMargin='bottom'
 					isDisabled={lettersCount === 10}
 					styles={'letter-footer-info-button--new-letter'}
 				>

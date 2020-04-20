@@ -29,11 +29,14 @@ You can't keep more than 9 letters at the same time.
 - [ ] Add export & import
 - [x] Add ability to change theme
 - [ ] Add settings
+- [x] Add tooltips
 - [ ] Add page icon
 - [ ] Add animations
 - [ ] Unit tests
 
 ### Changelog
+#### [1.1.3] - 2020-04-20
+- Add tooltips.
 
 #### [1.1.0] - 2020-03-31
 - Add ability to change theme.
