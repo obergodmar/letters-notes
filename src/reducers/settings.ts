@@ -1,4 +1,8 @@
-import {UPDATE_SETTINGS, UpdateSettingsType} from '../actions';
+import {
+	LOAD_SETTINGS,
+	UPDATE_SETTINGS,
+	SettingsType
+} from '../actions';
 import {Settings} from '../store';
 
 const initialState: Settings = {
@@ -7,13 +11,15 @@ const initialState: Settings = {
 	showCurrent: true
 };
 
-export const settings = (state = initialState, action: UpdateSettingsType) => {
+export const settings = (state = initialState, action: SettingsType) => {
 	switch (action.type) {
 		case UPDATE_SETTINGS:
 			return {
 				...state,
 				[action.key]: action.value
 			};
+		case LOAD_SETTINGS:
+			return action.settings;
 		default:
 			return state;
 	}

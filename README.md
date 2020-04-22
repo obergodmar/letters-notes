@@ -8,18 +8,15 @@
   - [Todo](#todo)
   - [Changelog](#changelog)
 
-
 ### Description
 Simply write your letters to anyone. Don't send they. Just Write.
 
 ### Screenshots
-
 The suicide note by Michael Kahnwald to his son, Jonas Kahnwald.
 
 ![Note](screenshots/image.png)
 
 ### Rules
-
 You can't keep more than 9 letters at the same time.
 
 ### Todo
@@ -35,6 +32,11 @@ You can't keep more than 9 letters at the same time.
 - [ ] Unit tests
 
 ### Changelog
+#### [1.2.0] - 2020-04-20
+- Add settings.
+- Add page hosting.
+- Add app hosting: [letters-notes.herokuapp.com](https://letters-notes.herokuapp.com/)
+
 #### [1.1.3] - 2020-04-20
 - Add tooltips.
 
