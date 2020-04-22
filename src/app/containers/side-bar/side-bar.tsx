@@ -51,14 +51,16 @@ export const SideBar = () => {
 							>
 								{letter.title || 'Unnamed'}
 							</span>
-							<LetterButton
-								styles='side-bar-letter-header-button'
-								handleClick={(e: MouseEvent<HTMLButtonElement>) => handleDeleteLetter(e, letter.id)}
-								tooltipText='Delete letter'
-								tooltipMargin='top'
-							>
-								<span>&#x2716;</span>
-							</LetterButton>
+							{sortedLetters.length !== 1 && (
+								<LetterButton
+									styles='side-bar-letter-header-button'
+									handleClick={(e: MouseEvent<HTMLButtonElement>) => handleDeleteLetter(e, letter.id)}
+									tooltipText='Delete letter'
+									tooltipMargin='top'
+								>
+									<span>&#x2716;</span>
+								</LetterButton>
+							)}
 						</div>
 						<div className='side-bar-letter-info'>
 							<LetterButton
