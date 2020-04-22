@@ -49,7 +49,7 @@ export const SideBar = () => {
 						<div className='side-bar-letter-header'>
 							<span className='side-bar-letter-header-title'
 							>
-								{letter.title || 'Unnamed'}
+								{letter.title.replace(/&nbsp;/g, '') || 'Unnamed'}
 							</span>
 							{sortedLetters.length !== 1 && (
 								<LetterButton
