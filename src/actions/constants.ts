@@ -6,3 +6,5 @@ export const DELETE_LETTER = 'DELETE_LETTER';
 export const MAKE_FAVORITE = 'MAKE_FAVORITE';
 export const CHANGE_THEME = 'CHANGE_THEME';
 export const UPDATE_SETTINGS = 'UPDATE_SETTINGS';
+export const LOAD_LETTERS = 'LOAD_LETTERS';
+export const LOAD_SETTINGS = 'LOAD_SETTINGS';

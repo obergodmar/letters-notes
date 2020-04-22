@@ -6,6 +6,8 @@ export {
 	DELETE_LETTER,
 	MAKE_FAVORITE,
 	CHANGE_THEME,
+	LOAD_SETTINGS,
+	LOAD_LETTERS,
 	UPDATE_SETTINGS
 } from './constants';
 
@@ -24,5 +26,6 @@ export {
 	LetterActionTypes,
 	ActionWithIdType,
 	ChangeThemeType,
-	UpdateSettingsType
+	LoadLettersType,
+	SettingsType
 } from './types';

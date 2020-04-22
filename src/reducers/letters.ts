@@ -5,7 +5,8 @@ import {
 	FILL_LETTER_TITLE,
 	NEW_LETTER,
 	MAKE_FAVORITE,
-	CHANGE_THEME
+	CHANGE_THEME,
+	LOAD_LETTERS
 } from '../actions';
 import {LetterState} from '../store';
 import {v4} from 'node-uuid';
@@ -82,6 +83,8 @@ export const letters = (state = initialState, action: LetterActionTypes) => {
 					letter
 				)
 			);
+		case LOAD_LETTERS:
+			return action.letters;
 		default:
 			return state;
 	}

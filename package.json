@@ -1,6 +1,6 @@
 {
   "name": "letters-notes",
-  "version": "1.0.1",
+  "version": "1.2.0",
   "description": "",
   "main": "index.js",
   "author": {
@@ -12,7 +12,8 @@
     "bundle": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "build": "env NODE_ENV=production webpack --mode production"
+    "build": "env NODE_ENV=production webpack --mode production",
+    "dev": "env NODE_ENV=development webpack-dev-server --mode development --open --hot"
   },
   "engines": {
     "node": "12.16.2"

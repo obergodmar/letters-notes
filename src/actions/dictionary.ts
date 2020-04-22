@@ -6,10 +6,19 @@ import {
 	MAKE_FAVORITE,
 	NEW_LETTER,
 	SELECT_CURRENT,
-	UPDATE_SETTINGS
+	UPDATE_SETTINGS,
+	LOAD_LETTERS
 } from './constants';
 
-import {ActionWithIdType, ChangeThemeType, FillBodyLetterType, FillTitleLetterType, UpdateSettingsType} from './types';
+import {
+	ActionWithIdType,
+	ChangeThemeType,
+	FillBodyLetterType,
+	FillTitleLetterType,
+	LoadLettersType, LoadSettingsType,
+	UpdateSettingsType
+} from './types';
+import {LetterState, Settings} from '../store';
 
 export const fillLetterTitle = (title: string, id: string): FillTitleLetterType => ({
 	type: FILL_LETTER_TITLE,
@@ -53,4 +62,14 @@ export const updateSettings = (key: string, value: boolean | string): UpdateSett
 	type: UPDATE_SETTINGS,
 	key,
 	value
+});
+
+export const loadLetters = (letters: LetterState): LoadLettersType => ({
+	type: LOAD_LETTERS,
+	letters
+});
+
+export const loadSettings = (settings: Settings): LoadSettingsType => ({
+	type: LOAD_LETTERS,
+	settings
 });

@@ -1,3 +1,5 @@
+import {LetterState, Settings} from '../store';
+
 export interface FillTitleLetterType {
 	type: string;
 	title: string;
@@ -16,7 +18,11 @@ export interface ChangeThemeType {
 	theme: string;
 }
 
-export type LetterActionTypes =	FillTitleLetterType & FillBodyLetterType & ChangeThemeType;
+export type LetterActionTypes =
+	FillTitleLetterType &
+	FillBodyLetterType &
+	ChangeThemeType &
+	LoadLettersType;
 
 export interface ActionWithIdType {
 	type: string;
@@ -27,4 +33,16 @@ export interface UpdateSettingsType {
 	type: string;
 	key: string;
 	value: boolean | string;
+}
+
+export type SettingsType = UpdateSettingsType & LoadSettingsType;
+
+export interface LoadLettersType {
+	type: string;
+	letters: LetterState;
+}
+
+export interface LoadSettingsType {
+	type: string;
+	settings: Settings;
 }
