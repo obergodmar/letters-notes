@@ -1,5 +1,5 @@
 import {FunctionComponent, ReactComponentElement, useEffect, useState} from 'react';
-import { createPortal } from 'react-dom';
+import {createPortal} from 'react-dom';
 
 interface Props {
 	children: ReactComponentElement<FunctionComponent>;

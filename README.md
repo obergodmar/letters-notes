@@ -28,9 +28,9 @@ You can't keep more than 9 letters at the same time.
 - [ ] Add custom scrollbar
 - [ ] Add export & import
 - [x] Add ability to change theme
-- [ ] Add settings
+- [x] Add settings
 - [x] Add tooltips
-- [ ] Add page icon
+- [x] Add page icon
 - [ ] Add animations
 - [ ] Unit tests
 

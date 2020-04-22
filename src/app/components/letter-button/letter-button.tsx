@@ -1,8 +1,9 @@
 import * as React from 'react';
 import {MouseEvent, useRef, useState} from 'react';
-import './letter-button.scss';
 import {LetterTooltip} from '..';
 import {setTooltipCoordinates} from '../../../utils';
+
+import './letter-button.scss';
 
 interface Props {
 	children: JSX.Element;

@@ -22,3 +22,9 @@ export interface ActionWithIdType {
 	type: string;
 	id: string;
 }
+
+export interface UpdateSettingsType {
+	type: string;
+	key: string;
+	value: boolean | string;
+}

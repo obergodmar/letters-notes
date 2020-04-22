@@ -4,6 +4,7 @@
   height: 4.2vh;
   text-align: center;
   transition: opacity 0.2s;
+  z-index: 2;
 
   &-text {
     box-sizing: border-box;

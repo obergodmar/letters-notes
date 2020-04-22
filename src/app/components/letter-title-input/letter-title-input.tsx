@@ -6,6 +6,7 @@ import {createSelector} from 'reselect';
 import {titleLengthLimiter} from '../../../utils';
 import {fillLetterTitle} from '../../../actions';
 import {currentIdSelector, lettersSelector} from '../../../selectors';
+
 import './letter-title-input.scss';
 
 interface Props {
@@ -41,7 +42,7 @@ export const LetterTitleInput = ({bodyInputRef}: Props) => {
 			handleWarning(false);
 			current.disabled = false;
 		}
-	}, [id]);
+	}, [id, title]);
 
 	const handleChange = (e: ContentEditableEvent) => {
 		const {value} = e.target;
@@ -52,6 +53,9 @@ export const LetterTitleInput = ({bodyInputRef}: Props) => {
 			handleWarning(false);
 		}
 
+		if (value === title) {
+			return;
+		}
 		dispatch(fillLetterTitle(value, id));
 	};
 

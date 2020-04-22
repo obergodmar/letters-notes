@@ -1,11 +1,10 @@
 import * as React from 'react';
 import {MouseEvent, useRef, useState} from 'react';
-import {createSelector} from 'reselect';
 import {useDispatch, useSelector} from 'react-redux';
-import {currentIdSelector, lettersSelector} from '../../../selectors';
+import {currentIdSelector, currentThemeSelector, settingsSelector} from '../../../selectors';
 import {setTooltipCoordinates} from '../../../utils';
 import {LetterTooltip} from '..';
-import {changeTheme} from '../../../actions';
+import {changeTheme, updateSettings} from '../../../actions';
 
 import './theme-buttons.scss';
 
@@ -38,20 +37,14 @@ export const ThemeButtons = () => {
 	const handleChangeTheme = (e: MouseEvent<HTMLDivElement>, theme: string) => {
 		e.preventDefault();
 		dispatch(changeTheme(currentSelector, theme));
+		dispatch(updateSettings('currentTheme', theme));
 	};
 
-	const currentLetterSelector = createSelector(
-		lettersSelector,
-		(letters) =>
-			letters.find(({id}) => id === currentSelector) || {theme: 'default'}
-	);
-
-	const currentThemeSelector = createSelector(
-		currentLetterSelector,
-		({theme}) => theme
-	);
-
-	const currentTheme = useSelector(currentThemeSelector);
+	let currentTheme = useSelector(currentThemeSelector(currentSelector));
+	const settings = useSelector(settingsSelector);
+	if (settings.onlyTheme) {
+		currentTheme = settings.currentTheme;
+	}
 
 	themes.sort(({name}) => {
 		if (name === currentTheme) {

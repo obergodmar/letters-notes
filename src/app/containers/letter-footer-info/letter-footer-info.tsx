@@ -1,23 +1,20 @@
 import * as React from 'react';
+import {useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {createSelector} from 'reselect';
 import {
-	letterBodyWordsCount,
+	calculateDateDifference,
 	letterBodyLength,
 	letterBodyWhiteSpaceCount,
-	calculateDateDifference
+	letterBodyWordsCount
 } from '../../../utils';
 import {v4} from 'node-uuid';
-import {
-	currentIdSelector,
-	lettersLength,
-	lettersSelector
-} from '../../../selectors';
+import {currentIdSelector, lettersLength, lettersSelector} from '../../../selectors';
 import {LetterButton, LetterPortal} from '../../components';
 import {newLetter, selectCurrent} from '../../../actions';
-import './letter-footer-info.scss';
 import {LetterSettings} from '..';
-import {useState} from 'react';
+
+import './letter-footer-info.scss';
 
 export const LetterFooterInfo = () => {
 	const [settingsShown, setSettingsShown] = useState(false);

@@ -20,4 +20,11 @@ export type LetterState = Letter[];
 export interface State {
 	letters: LetterState;
 	current: Current;
+	settings: Settings;
+}
+
+export interface Settings {
+	onlyTheme: boolean;
+	currentTheme: string;
+	showCurrent: boolean;
 }

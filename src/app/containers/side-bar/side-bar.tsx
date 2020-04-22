@@ -1,28 +1,22 @@
 import * as React from 'react';
-import {useMemo, MouseEvent} from 'react';
+import {MouseEvent, useMemo} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {createSelector} from 'reselect';
 import {State} from '../../../store';
 import {LetterButton} from '../../components';
-import {
-	calculateDateDifference,
-	sortByDateModified
-} from '../../../utils';
-import {
-	deleteLetter,
-	makeFavorite,
-	selectCurrent
-} from '../../../actions';
+import {calculateDateDifference, sortByDateModified} from '../../../utils';
+import {deleteLetter, makeFavorite, selectCurrent} from '../../../actions';
+import {lettersSelector, settingsSelector} from '../../../selectors';
+
 import './side-bar.scss';
 
 export const SideBar = () => {
 	const current = useSelector((state: State) => state.current);
-	const lettersWithoutSelected = createSelector(
-		(state: State) => state.letters,
-		letters => letters.filter(({id}) => id !== current)
-	);
+	const {showCurrent} = useSelector(settingsSelector);
 
-	const letters = useSelector(lettersWithoutSelected);
+	let letters = useSelector(lettersSelector);
+	if (!showCurrent) {
+		letters = letters.filter(({id}) => id !== current);
+	}
 	const sortedLetters = useMemo(() => sortByDateModified(letters), [letters]);
 	const dispatch = useDispatch();
 
@@ -48,7 +42,7 @@ export const SideBar = () => {
 			{sortedLetters && sortedLetters.length ? (
 				sortedLetters.map((letter, index) => (
 					<div
-						className='side-bar-letter'
+						className={current === letter.id ? 'side-bar-letter side-bar-letter--selected' : 'side-bar-letter'}
 						onClick={(e) => handleSelectCurrent(e, letter.id)}
 						key={letter.id}
 					>
