@@ -7,7 +7,7 @@
   background-color: var(--color-secondary, #fff3e3);
   font: inherit;
   height: 5vh;
-  font-size: 2vmin;
+  font-size: 2.2vmin;
   line-height: 3vmin;
   color: var(--info-color, #b3b3b3);
   transition: background-color 0.5s ease-in-out, сolor 0.5s ease-in-out;
@@ -16,16 +16,16 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    padding: 0 1vw 0.5vh 0.5vw;
+    text-align: center;
+    margin: 0 1vw 0 0.5vw;
   }
 
   &-button {
     width: 18vmax;
     background-color: inherit;
     font-size: 3vmin;
-    text-align: center;
 
-    &--new-letter {
+    &--hover {
       &:hover {
         background-color: var(--button-color, rgba(128, 128, 128, 0.2));
         color: var(--font-hover-color, #808080);

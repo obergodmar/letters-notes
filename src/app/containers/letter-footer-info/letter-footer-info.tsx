@@ -1,23 +1,23 @@
 import * as React from 'react';
+import {useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {createSelector} from 'reselect';
 import {
-	letterBodyWordsCount,
+	calculateDateDifference,
 	letterBodyLength,
 	letterBodyWhiteSpaceCount,
-	calculateDateDifference
+	letterBodyWordsCount
 } from '../../../utils';
 import {v4} from 'node-uuid';
-import {
-	currentIdSelector,
-	lettersLength,
-	lettersSelector
-} from '../../../selectors';
-import {LetterButton} from '../../components';
+import {currentIdSelector, lettersLength, lettersSelector} from '../../../selectors';
+import {LetterButton, LetterPortal} from '../../components';
 import {newLetter, selectCurrent} from '../../../actions';
+import {LetterSettings} from '..';
+
 import './letter-footer-info.scss';
 
 export const LetterFooterInfo = () => {
+	const [settingsShown, setSettingsShown] = useState(false);
 	const current = useSelector(currentIdSelector);
 	const lettersCount = useSelector(lettersLength);
 
@@ -55,11 +55,19 @@ export const LetterFooterInfo = () => {
 					tooltipText='Create new letter'
 					tooltipMargin='bottom'
 					isDisabled={lettersCount === 10}
-					styles={'letter-footer-info-button--new-letter'}
+					styles='letter-footer-info-button--hover'
 				>
 					<span>New Letter &#x2709;</span>
 				</LetterButton>
 			</div>
+			<LetterButton
+				styles='letter-footer-info-element letter-footer-info-button--hover'
+				handleClick={() => setSettingsShown(true)}
+				tooltipText='Open settings'
+				tooltipMargin='bottom'
+			>
+				<span>Settings &#x2699;</span>
+			</LetterButton>
 			<span className='letter-footer-info-element'>
 				Word count: {wordCount}
 			</span>
@@ -72,6 +80,13 @@ export const LetterFooterInfo = () => {
 			<span className='letter-footer-info-element'>
 				Created {timeDifference} ago
 			</span>
+			{settingsShown &&
+				<LetterPortal>
+					<LetterSettings
+						setSettingsShown={setSettingsShown}
+					/>
+				</LetterPortal>
+			}
 		</div>
 	);
 };

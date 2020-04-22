@@ -26,6 +26,11 @@
     border-bottom: solid 0.15vmax var(--border-color, #e6e6e6);
     transition: background-color 0.5s ease-out, border 0.5s ease-out;
 
+    &--selected {
+      background-color: var(--color-hover, #fcedd8);
+      color: var(--font-hover-color, #808080);
+    }
+
     &-header {
       display: flex;
       flex-direction: row;

@@ -1,19 +1,15 @@
 import {
-	FILL_LETTER_TITLE,
+	CHANGE_THEME,
+	DELETE_LETTER,
 	FILL_LETTER_BODY,
+	FILL_LETTER_TITLE,
+	MAKE_FAVORITE,
 	NEW_LETTER,
 	SELECT_CURRENT,
-	DELETE_LETTER,
-	MAKE_FAVORITE,
-	CHANGE_THEME
+	UPDATE_SETTINGS
 } from './constants';
 
-import {
-	ActionWithIdType,
-	FillTitleLetterType,
-	FillBodyLetterType,
-	ChangeThemeType
-} from './types';
+import {ActionWithIdType, ChangeThemeType, FillBodyLetterType, FillTitleLetterType, UpdateSettingsType} from './types';
 
 export const fillLetterTitle = (title: string, id: string): FillTitleLetterType => ({
 	type: FILL_LETTER_TITLE,
@@ -51,4 +47,10 @@ export const changeTheme = (id: string, theme: string): ChangeThemeType => ({
 	type: CHANGE_THEME,
 	id,
 	theme
+});
+
+export const updateSettings = (key: string, value: boolean | string): UpdateSettingsType => ({
+	type: UPDATE_SETTINGS,
+	key,
+	value
 });

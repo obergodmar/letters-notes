@@ -3,6 +3,7 @@ export {
 	LetterState,
 	Current,
 	State,
+	Settings,
 	Positioning
 } from './types';
 

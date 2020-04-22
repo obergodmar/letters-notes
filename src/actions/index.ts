@@ -5,7 +5,8 @@ export {
 	SELECT_CURRENT,
 	DELETE_LETTER,
 	MAKE_FAVORITE,
-	CHANGE_THEME
+	CHANGE_THEME,
+	UPDATE_SETTINGS
 } from './constants';
 
 export {
@@ -15,11 +16,13 @@ export {
 	selectCurrent,
 	deleteLetter,
 	makeFavorite,
-	changeTheme
+	changeTheme,
+	updateSettings
 } from './dictionary';
 
 export {
 	LetterActionTypes,
 	ActionWithIdType,
-	ChangeThemeType
+	ChangeThemeType,
+	UpdateSettingsType
 } from './types';

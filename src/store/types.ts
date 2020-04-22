@@ -11,7 +11,6 @@ export interface Letter {
 export interface Positioning {
 	left: number;
 	top: number;
-	width: number;
 }
 
 export type Current = string;
@@ -21,4 +20,11 @@ export type LetterState = Letter[];
 export interface State {
 	letters: LetterState;
 	current: Current;
+	settings: Settings;
+}
+
+export interface Settings {
+	onlyTheme: boolean;
+	currentTheme: string;
+	showCurrent: boolean;
 }

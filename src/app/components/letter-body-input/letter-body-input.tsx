@@ -1,14 +1,11 @@
 import * as React from 'react';
-import {forwardRef, Ref, RefObject} from 'react';
-import {ClipboardEvent} from 'react';
+import {ClipboardEvent, forwardRef, Ref, RefObject, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import ContentEditable, {ContentEditableEvent} from 'react-contenteditable';
 import {createSelector} from 'reselect';
-import {fillLetterBody} from '../../../actions';
-import {
-	currentIdSelector,
-	lettersSelector
-} from '../../../selectors';
+import {fillLetterBody, updateSettings} from '../../../actions';
+import {currentIdSelector, currentThemeSelector, lettersSelector, settingsSelector} from '../../../selectors';
+
 import './letter-body-input.scss';
 
 export const LetterBodyInput = forwardRef((
@@ -22,8 +19,16 @@ export const LetterBodyInput = forwardRef((
 			letters.find(({id}) => id === current) || {id: '', body: ''}
 	);
 	const {id, body} = useSelector(currentLetter);
+	const theme = useSelector(currentThemeSelector(current));
+	const {onlyTheme} = useSelector(settingsSelector);
 
 	const dispatch = useDispatch();
+
+	useEffect(() => {
+		if (!onlyTheme) {
+			dispatch(updateSettings('currentTheme', theme));
+		}
+	}, [theme, onlyTheme]);
 
 	const handleChange = (e: ContentEditableEvent) => {
 		const {value} = e.target as HTMLTextAreaElement;

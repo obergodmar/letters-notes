@@ -1,36 +1,30 @@
 import * as React from 'react';
 import {useRef} from 'react';
 import {useSelector} from 'react-redux';
-import {createSelector} from 'reselect';
-import {currentIdSelector, lettersSelector} from '../../../selectors';
+import {currentIdSelector, currentThemeSelector, settingsSelector} from '../../../selectors';
 import {LetterFooterInfo, LetterTitle, SideBar} from '..';
 import {LetterBodyInput} from '../../components';
+
 import './main-container.scss';
 
 export const MainContainer = () => {
-	const currentSelector = useSelector(currentIdSelector);
-	const currentLetterSelector = createSelector(
-		lettersSelector,
-		(letters) =>
-			letters.find(({id}) => id === currentSelector) || {theme: 'default'}
-	);
+	const currentId = useSelector(currentIdSelector);
 
-	const currentThemeSelector = createSelector(
-		currentLetterSelector,
-		({theme}) => theme
-	);
-
-	const currentTheme = useSelector(currentThemeSelector);
+	let currentTheme = useSelector(currentThemeSelector(currentId));
+	const settings = useSelector(settingsSelector);
+	if (settings.onlyTheme) {
+		currentTheme = settings.currentTheme;
+	}
 
 	const theme = `main-container theme-${currentTheme}`;
 
 	const bodyInputRef = useRef<HTMLInputElement>(null);
 	return (
 		<div className={theme} id='main-container'>
-			<LetterTitle bodyInputRef={bodyInputRef}/>
+			<LetterTitle bodyInputRef={bodyInputRef} />
 			<div className='main-container-letter-body'>
 				<SideBar />
-				<LetterBodyInput ref={bodyInputRef}/>
+				<LetterBodyInput ref={bodyInputRef} />
 			</div>
 			<LetterFooterInfo />
 		</div>
