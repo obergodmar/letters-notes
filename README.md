@@ -32,7 +32,7 @@ You can't keep more than 9 letters at the same time.
 - [ ] Unit tests
 
 ### Changelog
-#### [1.2.0] - 2020-04-20
+#### [1.2.0] - 2020-04-22
 - Add settings.
 - Add page hosting.
 - Add app hosting: [letters-notes.herokuapp.com](https://letters-notes.herokuapp.com/)
