@@ -1,9 +1,7 @@
-const staticServer = require('node-static');
-const file = new staticServer.Server('./dist');
+const path = require('path');
+const express = require('express');
 
-require('http').createServer( (request, response) =>
-    request
-        .addListener('end',  () =>
-            file.serve(request, response))
-                .resume()
-).listen(process.env.PORT);
+express()
+    .use(express.static(path.join(__dirname, 'dist')))
+    .use('/assets', express.static(path.join(__dirname, 'assets')))
+    .listen(process.env.PORT);
