@@ -57,6 +57,13 @@ module.exports = () => {
                     ]
                 },
                 {
+                    test: /\.css$/,
+                    use: [
+                        {loader: 'style-loader'},
+                        {loader: 'css-loader'}
+                    ]
+                },
+                {
                     test: /\.(png|woff|woff2|eot|ttf|svg)$/,
                     use: ['url-loader?limit=100000']
                 }

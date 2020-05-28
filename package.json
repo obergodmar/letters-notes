@@ -25,6 +25,7 @@
     "@babel/preset-env": "^7.8.4",
     "@babel/preset-react": "^7.8.3",
     "@babel/preset-typescript": "^7.8.3",
+    "@types/node-static": "^0.7.3",
     "@types/node-uuid": "0.0.28",
     "@types/react": "^16.9.23",
     "@types/react-dom": "^16.9.5",
@@ -36,7 +37,7 @@
     "brotli-webpack-plugin": "^1.1.0",
     "css-loader": "^3.4.2",
     "html-webpack-plugin": "^3.2.0",
-    "node-sass": "^4.13.1",
+    "node-sass": "^4.14.1",
     "node-uuid": "^1.4.8",
     "react": "^16.12.0",
     "react-contenteditable": "^3.3.3",
@@ -54,12 +55,10 @@
     "typescript": "^3.8.2",
     "webpack": "^4.41.6",
     "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3",
-    "@types/node-static": "^0.7.3"
+    "webpack-dev-server": "^3.11.0"
   },
   "license": "ISC",
   "dependencies": {
-    "http": "0.0.1-security",
-    "node-static": "^0.7.11"
+    "express": "^4.17.1"
   }
 }
