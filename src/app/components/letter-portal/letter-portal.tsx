@@ -1,11 +1,11 @@
-import {FunctionComponent, ReactComponentElement, useEffect, useState} from 'react';
-import {createPortal} from 'react-dom';
+import { FunctionComponent, ReactComponentElement, useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 
 interface Props {
 	children: ReactComponentElement<FunctionComponent>;
 }
 
-export const LetterPortal = ({ children }: Props) => {
+export const LetterPortal = ({children}: Props) => {
 	const [mountpoint, setMountpoint] = useState(document.body);
 
 	useEffect(() => {

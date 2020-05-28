@@ -1,9 +1,9 @@
 import * as React from 'react';
-import {useRef} from 'react';
-import {useSelector} from 'react-redux';
-import {currentIdSelector, currentThemeSelector, settingsSelector} from '../../../selectors';
-import {LetterFooterInfo, LetterTitle, SideBar} from '..';
-import {LetterBodyInput} from '../../components';
+import { useRef } from 'react';
+import { useSelector } from 'react-redux';
+import { currentIdSelector, currentThemeSelector, settingsSelector } from '../../../selectors';
+import { LetterFooterInfo, LetterTitle, SideBar } from '..';
+import { LetterBodyInput } from '../../components';
 
 import './main-container.scss';
 

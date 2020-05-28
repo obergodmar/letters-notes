@@ -32,6 +32,10 @@ You can't keep more than 9 letters at the same time.
 - [ ] Unit tests
 
 ### Changelog
+#### [1.2.1] - 2020-05-28
+- Add locales: ru & en.
+- Change code style.
+
 #### [1.2.0] - 2020-04-20
 - Add settings.
 - Add page hosting.

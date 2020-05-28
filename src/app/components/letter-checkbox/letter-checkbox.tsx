@@ -1,7 +1,8 @@
 import * as React from 'react';
-import {useRef, useState} from 'react';
-import {LetterTooltip} from '..';
-import {setTooltipCoordinates} from '../../../utils';
+import { useContext, useRef, useState } from 'react';
+import { LetterTooltip } from '..';
+import { setTooltipCoordinates } from '../../../utils';
+import { LanguageContext } from '../../context/language-context';
 
 import './letter-checkbox.scss';
 
@@ -11,6 +12,7 @@ interface Props {
 }
 
 export const LetterCheckbox = ({isChecked, setChecked}: Props) => {
+	const language = useContext(LanguageContext);
 	const checkboxRef = useRef<HTMLDivElement>(null);
 	const [tooltipIsShown, setIsTooltipShown] = useState(false);
 
@@ -25,11 +27,17 @@ export const LetterCheckbox = ({isChecked, setChecked}: Props) => {
 			>
 				<div className={isChecked ? (
 					'letter-checkbox-core letter-checkbox-core--checked'
-				) : ('letter-checkbox-core')}/>
+				) : ('letter-checkbox-core')} />
 			</div>
 			{tooltipIsShown &&
 				<LetterTooltip
-					tooltipText={`Currently ${isChecked ? 'enabled' : 'disabled'}`}
+					tooltipText={`${language['tooltip.checkbox.currently']} ${
+						isChecked ?
+							language['tooltip.checkbox.enabled']
+						:
+							language['tooltip.checkbox.disabled']
+						}`
+					}
 					coordinates={setTooltipCoordinates(checkboxRef)}
 					margin='bottom'
 				/>}

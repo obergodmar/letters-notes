@@ -29,14 +29,16 @@
     }
   }
 
-  &:empty:before {
-    content: attr(placeholder);
-    display: block;
-    color: var(--info-color, #b3b3b3);
-    transition: color 0.5s ease-in-out;
-  }
-
   &--warning {
     color: var(--font-color-warning, #ff8a8a);
+  }
+
+  &--ru, &--en {
+    &:empty:before {
+      content: attr(placeholder);
+      display: block;
+      color: var(--info-color, #b3b3b3);
+      transition: color 0.5s ease-in-out;
+    }
   }
 }

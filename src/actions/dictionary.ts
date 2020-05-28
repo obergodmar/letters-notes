@@ -3,11 +3,11 @@ import {
 	DELETE_LETTER,
 	FILL_LETTER_BODY,
 	FILL_LETTER_TITLE,
+	LOAD_LETTERS,
 	MAKE_FAVORITE,
 	NEW_LETTER,
 	SELECT_CURRENT,
-	UPDATE_SETTINGS,
-	LOAD_LETTERS
+	UPDATE_SETTINGS
 } from './constants';
 
 import {
@@ -15,10 +15,11 @@ import {
 	ChangeThemeType,
 	FillBodyLetterType,
 	FillTitleLetterType,
-	LoadLettersType, LoadSettingsType,
+	LoadLettersType,
+	LoadSettingsType,
 	UpdateSettingsType
 } from './types';
-import {LetterState, Settings} from '../store';
+import { LetterState, Settings } from '../store';
 
 export const fillLetterTitle = (title: string, id: string): FillTitleLetterType => ({
 	type: FILL_LETTER_TITLE,

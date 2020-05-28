@@ -1,7 +1,7 @@
 import * as React from 'react';
-import {useEffect, useState} from 'react';
-import {Positioning} from '../../../store';
-import {LetterPortal} from '..';
+import { useEffect, useState } from 'react';
+import { Positioning } from '../../../store';
+import { LetterPortal } from '..';
 
 import './letter-tooltip.scss';
 

@@ -1,7 +1,7 @@
 import * as React from 'react';
-import {MouseEvent, useRef, useState} from 'react';
-import {LetterTooltip} from '..';
-import {setTooltipCoordinates} from '../../../utils';
+import { MouseEvent, useRef, useState } from 'react';
+import { LetterTooltip } from '..';
+import { setTooltipCoordinates } from '../../../utils';
 
 import './letter-button.scss';
 
@@ -15,12 +15,12 @@ interface Props {
 }
 
 export const LetterButton = ({
-		children,
-		handleClick,
-		isDisabled = false,
-		styles,
-		tooltipText,
-		tooltipMargin
+	children,
+	handleClick,
+	isDisabled = false,
+	styles,
+	tooltipText,
+	tooltipMargin
 }: Props) => {
 	const [tooltipIsShown, setIsTooltipShown] = useState(false);
 	const buttonRef = useRef<HTMLButtonElement>(null);
@@ -37,12 +37,12 @@ export const LetterButton = ({
 			>
 				{children}
 			</button>
-			{tooltipIsShown  &&
+			{tooltipIsShown &&
 				<LetterTooltip
 					tooltipText={tooltipText}
 					margin={tooltipMargin}
 					coordinates={setTooltipCoordinates(buttonRef)}
 				/>}
-			</>
+		</>
 	);
 };

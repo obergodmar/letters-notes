@@ -1,11 +1,11 @@
 import * as React from 'react';
 import ReactDOM from 'react-dom';
-import {createStore} from 'redux';
-import {devToolsEnhancer} from 'redux-devtools-extension';
-import {Provider} from 'react-redux';
+import { createStore } from 'redux';
+import { devToolsEnhancer } from 'redux-devtools-extension';
+import { Provider } from 'react-redux';
 import reducer from './reducers';
-import {App} from './app/main';
-import {loadState, saveState} from './store';
+import { App } from './app/main';
+import { loadState, saveState } from './store';
 
 const persistedState = loadState();
 const store = createStore(reducer, persistedState, devToolsEnhancer({}));

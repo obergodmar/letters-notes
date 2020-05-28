@@ -1,9 +1,10 @@
 import * as React from 'react';
-import {useCallback, useEffect, useState} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
-import {LetterButton, LetterCheckbox} from '../../components';
-import {settingsSelector} from '../../../selectors';
-import {updateSettings} from '../../../actions';
+import { useCallback, useContext, useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { LetterButton, LetterCheckbox } from '../../components';
+import { settingsSelector } from '../../../selectors';
+import { updateSettings } from '../../../actions';
+import { LanguageContext } from '../../context/language-context';
 
 import './letter-settings.scss';
 
@@ -12,9 +13,9 @@ interface Props {
 }
 
 export const LetterSettings = ({setSettingsShown}: Props) => {
+	const lang = useContext(LanguageContext);
 	const [isVisible, setVisible] = useState(false);
-
-	const {onlyTheme, showCurrent} = useSelector(settingsSelector);
+	const {onlyTheme, showCurrent, language} = useSelector(settingsSelector);
 	const dispatch = useDispatch();
 
 	const handleClose = useCallback(({key}: KeyboardEvent) => {
@@ -37,35 +38,69 @@ export const LetterSettings = ({setSettingsShown}: Props) => {
 		setTimeout(() => setSettingsShown(false), 300);
 	};
 
-	return(
+	return (
 		<div className='letter-settings'>
 			<div
 				className='letter-settings--background'
 				style={{opacity: isVisible ? '0.8' : '0'}}
 				onClick={handleClick}
 			/>
-				<div
-					className='letter-settings-window'
-					style={{transform: isVisible ? 'translateY(0)' : 'translateY(-200%)'}}
-				>
-					<div className='letter-settings-window-title'>Settings</div>
-					<div className='letter-settings-window-row'>
-						<LetterCheckbox isChecked={onlyTheme} setChecked={() => dispatch(updateSettings('onlyTheme', !onlyTheme))} />
-						<span className='letter-settings-window-row-text'>Use one theme for all letters</span>
-					</div>
-					<div className='letter-settings-window-row'>
-						<LetterCheckbox isChecked={showCurrent} setChecked={() => dispatch(updateSettings('showCurrent', !showCurrent))} />
-						<span className='letter-settings-window-row-text'>Show current letter in the left</span>
-					</div>
+			<div
+				className='letter-settings-window'
+				style={{transform: isVisible ? 'translateY(0)' : 'translateY(-200%)'}}
+			>
+				<div className='letter-settings-window-title'>{lang['ui.settings']}</div>
+				<div className='letter-settings-window-row'>
+					<LetterCheckbox
+						isChecked={onlyTheme}
+						setChecked={() => dispatch(updateSettings('onlyTheme', !onlyTheme))}
+					/>
+					<span className='letter-settings-window-row-text'>{lang['ui.settings.theme']}</span>
+				</div>
+				<div className='letter-settings-window-row'>
+					<LetterCheckbox
+						isChecked={showCurrent}
+						setChecked={() => dispatch(updateSettings('showCurrent', !showCurrent))}
+					/>
+					<span className='letter-settings-window-row-text'>{lang['ui.settings.current']}</span>
+				</div>
+				<div className='letter-settings-window-row'>
+					<LetterCheckbox
+						isChecked={language === 'ru'}
+						setChecked={() => dispatch(updateSettings('language', 'ru'))}
+					/>
+					<span className='letter-settings-window-row-text'>{lang['ui.settings.ru']}</span>
+					<LetterCheckbox
+						isChecked={language === 'en'}
+						setChecked={() => dispatch(updateSettings('language', 'en'))}
+					/>
+					<span className='letter-settings-window-row-text'>{lang['ui.settings.en']}</span>
+				</div>
+				<div className='letter-settings-window-row'>
 					<LetterButton
-						tooltipText='Close settings window'
-						handleClick={handleClick}
-						tooltipMargin='bottom'
-						styles='letter-settings-window-button'
-						children={<span>Save and Close</span>}
+						handleClick={() => {
+						}}
+						tooltipText={lang['button.tooltip.import']}
+						tooltipMargin='top'
+						children={<span>{lang['button.import']}</span>}
+					/>
+					<LetterButton
+						handleClick={() => {
+						}}
+						tooltipText={lang['button.tooltip.export']}
+						tooltipMargin='top'
+						children={<span>{lang['button.export']}</span>}
 					/>
 				</div>
+				<LetterButton
+					tooltipText={lang['tooltip.close']}
+					handleClick={handleClick}
+					tooltipMargin='bottom'
+					styles='letter-settings-window-button'
+					children={<span>{lang['button.save']}</span>}
+				/>
 			</div>
+		</div>
 	);
 };
 

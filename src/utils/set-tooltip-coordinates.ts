@@ -1,5 +1,5 @@
-import {RefObject} from 'react';
-import {Positioning} from '../store';
+import { RefObject } from 'react';
+import { Positioning } from '../store';
 
 export const setTooltipCoordinates = (element: RefObject<HTMLElement> | undefined): Positioning => {
 	if (!element || !element.current) {

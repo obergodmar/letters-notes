@@ -27,4 +27,5 @@ export interface Settings {
 	onlyTheme: boolean;
 	currentTheme: string;
 	showCurrent: boolean;
+	language: 'ru' | 'en';
 }

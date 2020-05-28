@@ -32,10 +32,12 @@
     }
   }
 
-  &:empty:before {
-    content: attr(placeholder);
-    display: block;
-    color: var(--info-color, #b3b3b3);
-    transition: color 0.5s ease-in-out;
+  &--ru, &--en {
+    &:empty:before {
+      content: attr(placeholder);
+      display: block;
+      color: var(--info-color, #b3b3b3);
+      transition: color 0.5s ease-in-out;
+    }
   }
 }

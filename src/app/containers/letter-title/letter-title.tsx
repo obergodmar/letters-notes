@@ -1,6 +1,6 @@
 import * as React from 'react';
-import {RefObject} from 'react';
-import {LetterTitleInput, ThemeButtons} from '../../components';
+import { RefObject } from 'react';
+import { LetterTitleInput, ThemeButtons } from '../../components';
 
 import './letter-title.scss';
 

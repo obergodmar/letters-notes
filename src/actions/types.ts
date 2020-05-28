@@ -1,4 +1,4 @@
-import {LetterState, Settings} from '../store';
+import { LetterState, Settings } from '../store';
 
 export interface FillTitleLetterType {
 	type: string;

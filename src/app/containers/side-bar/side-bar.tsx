@@ -1,17 +1,19 @@
 import * as React from 'react';
-import {MouseEvent, useMemo} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
-import {State} from '../../../store';
-import {LetterButton} from '../../components';
-import {calculateDateDifference, sortByDateModified} from '../../../utils';
-import {deleteLetter, makeFavorite, selectCurrent} from '../../../actions';
-import {lettersSelector, settingsSelector} from '../../../selectors';
+import { MouseEvent, useContext, useMemo } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { State } from '../../../store';
+import { LetterButton } from '../../components';
+import { calculateDateDifference, sortByDateModified } from '../../../utils';
+import { deleteLetter, makeFavorite, selectCurrent } from '../../../actions';
+import { lettersSelector, settingsSelector } from '../../../selectors';
+import { LanguageContext } from '../../context/language-context';
 
 import './side-bar.scss';
 
 export const SideBar = () => {
+	const lang = useContext(LanguageContext);
 	const current = useSelector((state: State) => state.current);
-	const {showCurrent} = useSelector(settingsSelector);
+	const {showCurrent, language} = useSelector(settingsSelector);
 
 	let letters = useSelector(lettersSelector);
 	if (!showCurrent) {
@@ -49,13 +51,13 @@ export const SideBar = () => {
 						<div className='side-bar-letter-header'>
 							<span className='side-bar-letter-header-title'
 							>
-								{letter.title || 'Unnamed'}
+								{letter.title || lang['ui.unnamed']}
 							</span>
 							{sortedLetters.length !== 1 && (
 								<LetterButton
 									styles='side-bar-letter-header-button'
 									handleClick={(e: MouseEvent<HTMLButtonElement>) => handleDeleteLetter(e, letter.id)}
-									tooltipText='Delete letter'
+									tooltipText={lang['tooltip.button.delete']}
 									tooltipMargin='top'
 								>
 									<span>&#x2716;</span>
@@ -66,24 +68,24 @@ export const SideBar = () => {
 							<LetterButton
 								styles='side-bar-letter-info-button'
 								handleClick={(e: MouseEvent<HTMLButtonElement>) => handleFavorite(e, letter.id)}
-								tooltipText='Add to Favorites'
+								tooltipText={lang['tooltip.add.favorite']}
 								tooltipMargin='top'
 							>
 								{letter.isFavorite ? (
-										<span>{index + 1} &#x2605;</span>
-									) : (
-										<span>{index + 1} &#9734;</span>
-									)}
+									<span>{index + 1} &#x2605;</span>
+								) : (
+									<span>{index + 1} &#9734;</span>
+								)}
 							</LetterButton>
 							<span className='side-bar-letter-info-date'>
-								Modified {calculateDateDifference(letter.dateModified)} ago
+								{lang['ui.modified']} {calculateDateDifference(letter.dateModified, language)} {lang['ui.modified.ago']}
 							</span>
 						</div>
 					</div>
 				))
 			) : (
 				<div className='side-bar--empty'>
-					You have no other letters now
+					{lang['ui.no.letters']}
 				</div>
 			)}
 		</div>

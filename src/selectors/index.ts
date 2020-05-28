@@ -1,5 +1,5 @@
-import {createSelector} from 'reselect';
-import {State} from '../store';
+import { createSelector } from 'reselect';
+import { State } from '../store';
 
 export const currentIdSelector = (state: State) => state.current;
 

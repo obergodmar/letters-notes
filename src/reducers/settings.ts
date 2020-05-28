@@ -1,14 +1,11 @@
-import {
-	LOAD_SETTINGS,
-	UPDATE_SETTINGS,
-	SettingsType
-} from '../actions';
-import {Settings} from '../store';
+import { LOAD_SETTINGS, SettingsType, UPDATE_SETTINGS } from '../actions';
+import { Settings } from '../store';
 
 const initialState: Settings = {
 	onlyTheme: true,
 	currentTheme: 'default',
-	showCurrent: true
+	showCurrent: true,
+	language: 'en'
 };
 
 export const settings = (state = initialState, action: SettingsType) => {
