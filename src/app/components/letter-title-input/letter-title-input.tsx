@@ -1,11 +1,12 @@
 import * as React from 'react';
-import {RefObject, useEffect, useRef, useState} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
-import ContentEditable, {ContentEditableEvent} from 'react-contenteditable';
-import {createSelector} from 'reselect';
-import {titleLengthLimiter} from '../../../utils';
-import {fillLetterTitle} from '../../../actions';
-import {currentIdSelector, lettersSelector} from '../../../selectors';
+import { RefObject, useContext, useEffect, useRef, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import ContentEditable, { ContentEditableEvent } from 'react-contenteditable';
+import { createSelector } from 'reselect';
+import { titleLengthLimiter } from '../../../utils';
+import { fillLetterTitle } from '../../../actions';
+import { currentIdSelector, lettersSelector, settingsSelector } from '../../../selectors';
+import { LanguageContext } from '../../context/language-context';
 
 import './letter-title-input.scss';
 
@@ -14,7 +15,9 @@ interface Props {
 }
 
 export const LetterTitleInput = ({bodyInputRef}: Props) => {
+	const lang = useContext(LanguageContext);
 	const current = useSelector(currentIdSelector);
+	const {language} = useSelector(settingsSelector);
 	const currentLetter = createSelector(
 		lettersSelector,
 		(letters) =>
@@ -77,20 +80,26 @@ export const LetterTitleInput = ({bodyInputRef}: Props) => {
 	};
 
 	const styles = inputWarning ? (
-			'letter-title-input letter-title-input--warning'
-		) : (
-			'letter-title-input'
+		'letter-title-input letter-title-input--warning'
+	) : (
+		'letter-title-input'
 	);
 
 	return (
 		<ContentEditable
 			html={title}
-			className={styles}
+			className={`${styles} ${
+				language === 'ru'
+					?
+					'letter-title-input--ru'
+					: 'letter-title-input--en'
+			}`
+			}
 			innerRef={titleInputRef}
 			onChange={handleChange}
 			onKeyDown={handleNewLine}
 			onPaste={handlePaste}
-			placeholder='Letter title here...'
+			placeholder={lang['title.placeholder']}
 		/>
 	);
 };

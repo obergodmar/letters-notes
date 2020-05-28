@@ -1,6 +1,6 @@
-import {Current} from '../store';
-import {SELECT_CURRENT, ActionWithIdType} from '../actions';
-import {currentLetter} from './letters';
+import { Current } from '../store';
+import { ActionWithIdType, SELECT_CURRENT } from '../actions';
+import { currentLetter } from './letters';
 
 const initialState: Current = currentLetter;
 

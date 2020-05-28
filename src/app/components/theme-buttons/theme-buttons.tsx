@@ -1,10 +1,11 @@
 import * as React from 'react';
-import {MouseEvent, useRef, useState} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
-import {currentIdSelector, currentThemeSelector, settingsSelector} from '../../../selectors';
-import {setTooltipCoordinates} from '../../../utils';
-import {LetterTooltip} from '..';
-import {changeTheme, updateSettings} from '../../../actions';
+import { MouseEvent, useContext, useRef, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { currentIdSelector, currentThemeSelector, settingsSelector } from '../../../selectors';
+import { setTooltipCoordinates } from '../../../utils';
+import { LetterTooltip } from '..';
+import { changeTheme, updateSettings } from '../../../actions';
+import { LanguageContext } from '../../context/language-context';
 
 import './theme-buttons.scss';
 
@@ -28,6 +29,7 @@ const themes = [
 ];
 
 export const ThemeButtons = () => {
+	const language = useContext(LanguageContext);
 	const themeButtonsRef = useRef<HTMLDivElement>(null);
 	const currentSelector = useSelector(currentIdSelector);
 	const [tooltipIsShown, setIsTooltipShown] = useState(false);
@@ -75,12 +77,13 @@ export const ThemeButtons = () => {
 					onMouseLeave={() => setIsTooltipShown(false)}
 				/>
 			))}
-			{tooltipIsShown  &&
+			{tooltipIsShown &&
 				<LetterTooltip
-					tooltipText='Change theme'
+					tooltipText={language['tooltip.button.theme']}
 					margin='top'
 					coordinates={setTooltipCoordinates(themeButtonsRef)}
-				/>}
+				/>
+			}
 		</div>
 	);
 };

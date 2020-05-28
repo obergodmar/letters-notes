@@ -1,4 +1,4 @@
-import {Letter} from '../store';
+import { Letter } from '../store';
 
 export const sortByDateModified = (letters: Letter[]): Letter[] => (
 	[...letters].sort((a, b) => {
